@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.gestionsellos;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,8 +8,7 @@ import java.util.Scanner;
 /**
  *
  * @author NTM
- */
-/*
+ * @version 14/12/2023
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
@@ -27,18 +22,26 @@ class Sello {
 
     
 
+    /**
+     * Este es el constructor para la clase Sello
+     * @param pais 
+     * @param motivo
+     * @param anoEmision 
+     */
     public Sello(String pais, String motivo, int anoEmision) {
-    // Constructores
         this.pais = pais;
         this.motivo = motivo;
         this.anoEmision = anoEmision;
     }
     
-    // Getters y Setters
+    /**
+     * Getters y Setters
+    */
     public String getPais() {
         return pais;
     }
 
+    
     public String getMotivo() {
         return motivo;
     }
@@ -47,31 +50,47 @@ class Sello {
         return anoEmision;
     }
 
-    // Devuelve por pantalla las variables
+    /**
+     * 
+     * @return Devuelve las variables con en un texto
+     */
     @Override
     public String toString() {
         return "País: " + pais + ", Motivo: " + motivo + ", Año de emisión: " + anoEmision;
     }
 }
-
+/**
+ * 
+ * @author Kain
+ */
 public class GestionSellos{
    
     // Establece un array de la clase Sello llamada sellos
     private ArrayList<Sello> sellos;
 
+    /**
+     * 
+     */
     public GestionSellos() {
         //Crea un nuevo array de sellos
         sellos = new ArrayList<>();
     }
 
-    // Función que agrega un nuevo sello 
+    /**
+     * 
+     * @param pais
+     * @param motivo
+     * @param anoEmision 
+     */
     public void agregarSello(String pais, String motivo, int anoEmision) {
         Sello nuevoSello = new Sello(pais, motivo, anoEmision);
         sellos.add(nuevoSello);
         System.out.println("Sello agregado: " + nuevoSello);
     }
     
-    // Función que imprime por pantalla la lista de sellos o avisa si esta vacía
+    /**
+     * 
+     */
     public void mostrarSellos() {
         if (sellos.isEmpty()) {
             System.out.println("La lista de sellos está vacía.");
@@ -83,7 +102,10 @@ public class GestionSellos{
         }
     }
         
-    // Función que elimina los sellos escogidos que estén en nuestra lista
+    /**
+     * 
+     * @param pais 
+     */
         public void eliminarSello(String pais) {
         boolean encontrado = false;
         for (Sello sello : sellos) {
@@ -99,6 +121,10 @@ public class GestionSellos{
         }
     }
 
+        /**
+         * 
+         * @param args 
+         */
     public static void main(String[] args) {
         // Inicia un Scanner para el menu.
         GestionSellos gestionSellos = new GestionSellos();
