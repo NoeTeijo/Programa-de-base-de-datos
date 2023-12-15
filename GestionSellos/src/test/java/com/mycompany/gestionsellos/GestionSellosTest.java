@@ -4,8 +4,11 @@
  */
 package com.mycompany.gestionsellos;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
+import java.time.Year;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -132,16 +135,6 @@ public class GestionSellosTest {
         // Verificar que la lista siga conteniendo solo un sello
         assertEquals(1, gestionSellos.sellos.size(), "La lista no debería cambiar si se intenta eliminar un sello inexistente.");
     }
-    /**
-     * Test of main method, of class GestionSellos.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        GestionSellos.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }
+
+    

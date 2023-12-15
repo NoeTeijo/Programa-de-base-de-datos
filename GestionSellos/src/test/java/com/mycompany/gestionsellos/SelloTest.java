@@ -41,13 +41,11 @@ public class SelloTest {
      */
     @Test
     public void testGetPais() {
-        System.out.println("getPais");
-        Sello instance = null;
-        String expResult = "";
-        String result = instance.getPais();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // Crea una instancia de Sello con valores específicos
+        Sello instance = new Sello("País de prueba", "Motivo de prueba", 2023);
+
+        // Verifica que el método getPais devuelve el valor correcto
+        assertEquals("País de prueba", instance.getPais());
     }
 
     /**
@@ -91,5 +89,4 @@ public class SelloTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
 }
