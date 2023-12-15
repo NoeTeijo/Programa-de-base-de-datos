@@ -13,9 +13,9 @@ package com.mycompany.gestionsellos;
      */
     public class Sello {
 
-        private String pais;
-        private String motivo;
-        private int anoEmision;
+        private final String pais;
+        private final String motivo;
+        private final int anoEmision;
 
         /**
          * Constructor para la clase Sello.

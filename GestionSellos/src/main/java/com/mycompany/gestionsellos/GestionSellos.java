@@ -8,14 +8,14 @@ import java.util.Scanner;
  * Utiliza un menú interactivo.
  *
  * @author NTM
- * @version 1.5
+ * @version 1.6
  */
 public class GestionSellos {
    
     // Establece un array de la clase Sello llamada sellos
 
     /**
-     *
+     * Lista que almacena los sellos.
      */
 
     ArrayList<Sello> sellos;
