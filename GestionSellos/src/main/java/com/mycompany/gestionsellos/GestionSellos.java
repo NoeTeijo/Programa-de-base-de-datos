@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Utiliza un menú interactivo.
  *
  * @author NTM
- * @version 1.6
+ * @version 2.0
  */
 public class GestionSellos {
    
@@ -37,9 +37,31 @@ public class GestionSellos {
     public void agregarSello(String pais, String motivo, int anoEmision) {
         Sello nuevoSello = new Sello(pais, motivo, anoEmision);
         sellos.add(nuevoSello);
+        if (anoEmision < 0) {
+        System.out.println("Error: El año de emisión no puede ser negativo.");
+           return;
+        } else if (anoEmision > 2024){
+            System.out.println("Error: El año de emisión no puede ser mayor del actual.");
+           return;
+        }
+        if (esSoloNumero(motivo)) {
+            System.out.println("Error: El motivo no pueden contener solo números.");
+            return;
+        }
+         if (contieneNumeros(pais)) {
+        System.out.println("Error: El país no puede contener números.");
+        return;
+    }
         System.out.println("Sello agregado: " + nuevoSello);
     }
-
+        //Valora si en la variable solo se usan numeros
+        private boolean esSoloNumero(String str) {
+        return str.matches("\\d+");
+    }
+        //Valora si la variable contiene numeros en cualquier lugar.
+        private boolean contieneNumeros(String str) {
+        return str.matches(".*\\d+.*");
+        }
     /**
      * Muestra la lista de sellos almacenados.
      */

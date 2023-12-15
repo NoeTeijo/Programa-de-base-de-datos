@@ -66,10 +66,10 @@ public class SelloTest {
     @Test
     void testGetAnoEmision() {
         // Crea una instancia de Sello con valores específicos
-        Sello instance = new Sello("País de prueba", "Motivo de prueba", 2023);
+        Sello instance = new Sello("País de prueba", "Motivo de prueba", 2024);
 
         // Verifica que el método getAnoEmision devuelve el valor correcto
-        assertEquals(2023, instance.getAnoEmision());
+        assertEquals(2024, instance.getAnoEmision());
     }
 
     /**

@@ -67,7 +67,7 @@ public class GestionSellosTest {
         assertTrue(gestionSellos.sellos.isEmpty(), "La lista de sellos debe estar vacía al principio.");
 
         // Agregar un sello
-        gestionSellos.agregarSello("Pais1", "Motivo1", 2022);
+        gestionSellos.agregarSello("Zimbagwe", "Test1", 2025);
 
         // Verificar que la lista ahora contenga un sello
         assertFalse(gestionSellos.sellos.isEmpty(), "La lista de sellos no debe estar vacía después de agregar un sello.");
@@ -75,7 +75,7 @@ public class GestionSellosTest {
         assertEquals(1, gestionSellos.sellos.size(), "El tamaño de la lista debería ser 1 después de agregar un sello.");
 
         // Agregar otro sello
-        gestionSellos.agregarSello("Pais2", "Motivo2", 2023);
+        gestionSellos.agregarSello("Pais", "Motivo2", 2023);
 
         // Verificar que el tamaño de la lista ahora sea 2
         assertEquals(2, gestionSellos.sellos.size(), "El tamaño de la lista debería ser 2 después de agregar otro sello.");
