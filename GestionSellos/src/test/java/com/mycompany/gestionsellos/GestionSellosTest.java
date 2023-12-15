@@ -8,6 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.time.Duration;
 import java.time.Year;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -134,6 +135,20 @@ public class GestionSellosTest {
 
         // Verificar que la lista siga conteniendo solo un sello
         assertEquals(1, gestionSellos.sellos.size(), "La lista no debería cambiar si se intenta eliminar un sello inexistente.");
+    }
+    @Test
+     public void testAgregarSelloRendimiento() {
+        GestionSellos gestionSellos = new GestionSellos();
+
+        // Establece un número grande de sellos a agregar
+        int cantidadSellos = 10000;
+
+        // Mide el tiempo que tarda en agregar un gran número de sellos
+        assertTimeout(Duration.ofSeconds(5), () -> {
+            for (int i = 0; i < cantidadSellos; i++) {
+                gestionSellos.agregarSello("País" + i, "Motivo" + i, 2023);
+            }
+        });
     }
 }
 
