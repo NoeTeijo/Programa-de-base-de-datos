@@ -54,37 +54,34 @@ public class SelloTest {
     @Test
     void testGetMotivo() {
         // Crea una instancia de Sello con valores específicos
-        Sello instance = new Sello("País de prueba", "Motivo de prueba", 2023);
+        Sello instance = new Sello("País de prueba", "2", 2023);
 
         // Verifica que el método getMotivo devuelve el valor correcto
-        assertEquals("Motivo de prueba", instance.getMotivo());
+        assertEquals("2", instance.getMotivo());
     }
 
     /**
      * Test of getAnoEmision method, of class Sello.
      */
     @Test
-    public void testGetAnoEmision() {
-        System.out.println("getAnoEmision");
-        Sello instance = null;
-        int expResult = 0;
-        int result = instance.getAnoEmision();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    void testGetAnoEmision() {
+        // Crea una instancia de Sello con valores específicos
+        Sello instance = new Sello("País de prueba", "Motivo de prueba", 2023);
+
+        // Verifica que el método getAnoEmision devuelve el valor correcto
+        assertEquals(2023, instance.getAnoEmision());
     }
 
     /**
      * Test of toString method, of class Sello.
      */
     @Test
-    public void testToString() {
-        System.out.println("toString");
-        Sello instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    void testToString() {
+        // Crea una instancia de Sello con valores específicos
+        Sello instance = new Sello ("País de prueba", "Motivo de prueba", 2023);
+
+        // Verifica que el método toString devuelve la representación correcta
+        String expected = "País: País de prueba, Motivo: Motivo de prueba, Año de emisión: 2023";
+        assertEquals(expected, instance.toString());
     }
 }
