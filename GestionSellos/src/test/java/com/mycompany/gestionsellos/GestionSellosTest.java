@@ -56,14 +56,27 @@ public class GestionSellosTest {
      */
     @Test
     public void testAgregarSello() {
-        System.out.println("agregarSello");
-        String pais = "";
-        String motivo = "";
-        int anoEmision = 0;
-        GestionSellos instance = new GestionSellos();
-        instance.agregarSello(pais, motivo, anoEmision);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        GestionSellos gestionSellos = new GestionSellos();
+        
+        // Verificar que la lista esté vacía al principio
+        assertTrue(gestionSellos.sellos.isEmpty(), "La lista de sellos debe estar vacía al principio.");
+
+        // Agregar un sello
+        gestionSellos.agregarSello("Pais1", "Motivo1", 2022);
+
+        // Verificar que la lista ahora contenga un sello
+        assertFalse(gestionSellos.sellos.isEmpty(), "La lista de sellos no debe estar vacía después de agregar un sello.");
+        // Verificar que el tamaño de la lista sea 1
+        assertEquals(1, gestionSellos.sellos.size(), "El tamaño de la lista debería ser 1 después de agregar un sello.");
+
+        // Puedes realizar más verificaciones según sea necesario
+        // ...
+
+        // Agregar otro sello
+        gestionSellos.agregarSello("Pais2", "Motivo2", 2023);
+
+        // Verificar que el tamaño de la lista ahora sea 2
+        assertEquals(2, gestionSellos.sellos.size(), "El tamaño de la lista debería ser 2 después de agregar otro sello.");
     }
 
     /**

@@ -14,7 +14,11 @@ public class GestionSellos {
    
     // Establece un array de la clase Sello llamada sellos
 
-    private ArrayList<Sello> sellos;
+    /**
+     *
+     */
+
+    ArrayList<Sello> sellos;
 
     /**
      * Crea un nuevo array de sellos.
