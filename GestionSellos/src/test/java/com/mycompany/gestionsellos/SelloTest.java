@@ -42,24 +42,22 @@ public class SelloTest {
     @Test
     public void testGetPais() {
         // Crea una instancia de Sello con valores específicos
-        Sello instance = new Sello("País de prueba", "Motivo de prueba", 2023);
+        Sello instance = new Sello("2", "Motivo de prueba", 2023);
 
         // Verifica que el método getPais devuelve el valor correcto
-        assertEquals("País de prueba", instance.getPais());
+        assertEquals("2", instance.getPais());
     }
 
     /**
      * Test of getMotivo method, of class Sello.
      */
     @Test
-    public void testGetMotivo() {
-        System.out.println("getMotivo");
-        Sello instance = null;
-        String expResult = "";
-        String result = instance.getMotivo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    void testGetMotivo() {
+        // Crea una instancia de Sello con valores específicos
+        Sello instance = new Sello("País de prueba", "Motivo de prueba", 2023);
+
+        // Verifica que el método getMotivo devuelve el valor correcto
+        assertEquals("Motivo de prueba", instance.getMotivo());
     }
 
     /**
