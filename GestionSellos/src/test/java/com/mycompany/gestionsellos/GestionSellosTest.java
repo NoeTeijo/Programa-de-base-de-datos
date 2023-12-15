@@ -4,6 +4,8 @@
  */
 package com.mycompany.gestionsellos;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -81,25 +83,39 @@ public class GestionSellosTest {
      */
     @Test
     public void testMostrarSellos() {
-        System.out.println("mostrarSellos");
-        GestionSellos instance = new GestionSellos();
-        instance.mostrarSellos();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        // Guardar la salida estándar actual
+        PrintStream originalOut = System.out;
+        
+        // Crear una instancia de GestionSellos
+        GestionSellos gestionSellos = new GestionSellos();
+        try {
+            // Redirigir la salida estándar a un ByteArrayOutputStream
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outputStream));
 
+            // Llamar al método mostrarSellos  
+            gestionSellos.mostrarSellos();
+
+            
+            // Verificar que la salida sea la esperada
+            assertEquals("La lista de sellos está vacía." + System.lineSeparator(), outputStream.toString());
+        } finally {
+            // Restaurar la salida estándar original al finalizar la prueba
+            System.setOut(originalOut);
+        }
+    }
     /**
      * Test of eliminarSello method, of class GestionSellos.
      */
-    @Test
-    public void testEliminarSello() {
+@Test
+public void testEliminarSello() {
         System.out.println("eliminarSello");
         String pais = "";
         GestionSellos instance = new GestionSellos();
         instance.eliminarSello(pais);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
+}
 
     /**
      * Test of main method, of class GestionSellos.
