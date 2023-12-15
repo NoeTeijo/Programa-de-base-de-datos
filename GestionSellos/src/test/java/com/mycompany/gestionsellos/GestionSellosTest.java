@@ -107,16 +107,31 @@ public class GestionSellosTest {
     /**
      * Test of eliminarSello method, of class GestionSellos.
      */
-@Test
-public void testEliminarSello() {
-        System.out.println("eliminarSello");
-        String pais = "";
-        GestionSellos instance = new GestionSellos();
-        instance.eliminarSello(pais);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-}
 
+    @Test
+    public void testEliminarSello() {
+        // Crear una instancia de GestionSellos
+        GestionSellos gestionSellos = new GestionSellos();
+
+        // Agregar sellos
+        gestionSellos.agregarSello("Pais1", "Motivo1", 2022);
+        gestionSellos.agregarSello("Pais2", "Motivo2", 2023);
+
+        // Verificar que la lista contenga los dos sellos agregados
+        assertEquals(2, gestionSellos.sellos.size(), "La lista debería contener dos sellos.");
+
+        // Intentar eliminar un sello que existe
+        gestionSellos.eliminarSello("Pais1");
+
+        // Verificar que la lista ahora contenga solo un sello
+        assertEquals(1, gestionSellos.sellos.size(), "La lista debería contener un sello después de eliminar uno.");
+
+        // Intentar eliminar un sello que no existe
+        gestionSellos.eliminarSello("PaisInexistente");
+
+        // Verificar que la lista siga conteniendo solo un sello
+        assertEquals(1, gestionSellos.sellos.size(), "La lista no debería cambiar si se intenta eliminar un sello inexistente.");
+    }
     /**
      * Test of main method, of class GestionSellos.
      */
