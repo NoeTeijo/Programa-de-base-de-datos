@@ -69,9 +69,6 @@ public class GestionSellosTest {
         // Verificar que el tamaño de la lista sea 1
         assertEquals(1, gestionSellos.sellos.size(), "El tamaño de la lista debería ser 1 después de agregar un sello.");
 
-        // Puedes realizar más verificaciones según sea necesario
-        // ...
-
         // Agregar otro sello
         gestionSellos.agregarSello("Pais2", "Motivo2", 2023);
 
