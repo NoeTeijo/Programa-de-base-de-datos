@@ -54,11 +54,21 @@ public class GestionSellos {
     }
         System.out.println("Sello agregado: " + nuevoSello);
     }
-        //Valora si en la variable solo se usan numeros
+        /**
+        * Verifica si una cadena contiene solo números.
+        *
+        * @param str La cadena a verificar.
+        * @return true si la cadena contiene solo números, false de lo contrario.
+        */
         private boolean esSoloNumero(String str) {
         return str.matches("\\d+");
     }
-        //Valora si la variable contiene numeros en cualquier lugar.
+        /**
+        * Verifica si una cadena contiene números en cualquier lugar.
+        *
+        * @param str La cadena a verificar.
+        * @return true si la cadena contiene números en cualquier lugar, false de lo contrario.
+        */
         private boolean contieneNumeros(String str) {
         return str.matches(".*\\d+.*");
         }
